@@ -7,5 +7,13 @@ scalaVersion := "2.13.1"
 libraryDependencies += "org.apache.hive" % "hive-jdbc" % "1.1.0-cdh5.16.2"
 libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.6.0"
 libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.6.0"
+val circeVersion = "0.12.3"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
 
 resolvers += " Cloudera" at "http://repository.cloudera.com/artifactory/cloudera-repos/"
