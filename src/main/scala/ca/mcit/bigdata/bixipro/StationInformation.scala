@@ -1,4 +1,4 @@
-
+package ca.mcit.bigdata.bixipro
 import io.circe.{Decoder, HCursor}
 
 case class StationInformation (station_id : String, external_id : Option[String], name : String, short_name : Option[String],
@@ -19,6 +19,7 @@ object StationInformation{
     electric_bike_surcharge_waiver <- c.downField("electric_bike_surcharge_waiver").as[Option[Boolean]]
     eightd_has_key_dispenser <- c.downField("eightd_has_key_dispenser").as[Option[Boolean]]
     has_kiosk <- c.downField("has_kiosk").as[Option[Boolean]]
+
   }
     yield {
       StationInformation(station_id, external_id, name, short_name, lat, lon, rental_methods, capacity, electric_bike_surcharge_waiver, eightd_has_key_dispenser, has_kiosk)
