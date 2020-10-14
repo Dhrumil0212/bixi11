@@ -2,11 +2,22 @@ name := "bixi"
 
 version := "0.1"
 
-scalaVersion := "2.13.1"
+
 
 libraryDependencies += "org.apache.hive" % "hive-jdbc" % "1.1.0-cdh5.16.2"
-libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.6.0"
-libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.6.0"
+scalaVersion := "2.12.10"
+
+val hadoopVersion = "2.7.3"
+
+
+libraryDependencies ++= Seq(
+  "org.apache.hadoop" % "hadoop-common",
+  "org.apache.hadoop" % "hadoop-hdfs",
+).map( _ % hadoopVersion)
+
+
+
+
 val circeVersion = "0.12.3"
 
 libraryDependencies ++= Seq(
